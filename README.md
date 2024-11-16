@@ -59,7 +59,7 @@ npx dutyhours PL --withoutFridays
 Calculates the total number of working hours in the given month, considering public holidays and configurable working days.
 
 - `options` (object):
-  - `country` (string): The country code to determine the public holidays (e.g., 'US' for United States, 'PL' for Poland, etc.).
+  - `country` (string): The country code to determine the public holidays. In [ISO 3166-1 alpha-2 format](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). For example, 'US' for United States, 'PL' for Poland, etc.
   - `hoursPerDay` (number, optional): The number of working hours per day. Defaults to 8.
   - `withMondays`, `withTuesdays`, `withWednesdays`, `withThursdays`, `withFridays`, `withSaturdays`, `withSundays` (boolean, optional): Whether to include these days as working days. Defaults to true for weekdays, false for weekends.
   - `withoutMondays`, `withoutTuesdays`, `withoutWednesdays`, `withoutThursdays`, `withoutFridays`, `withoutSaturdays`, `withoutSundays` (boolean, optional): Whether to exclude these days from working days.
