@@ -15,7 +15,6 @@ program
   )
   .option('-y, --year <year>', 'The year to calculate working hours for. Defaults to the current year')
   .action((country, options) => {
-    console.log(options);
     console.log(calculateWorkingHours({ country, ...options }));
   });
 

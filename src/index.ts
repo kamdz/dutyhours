@@ -2,7 +2,7 @@ import Holidays from 'date-holidays';
 
 export interface Options {
   /**
-   * The country code to determine the public holidays.
+   * The country code to determine the public holidays. In ISO 3166-1 alpha-2 format.
    * For example, 'US' for United States, 'PL' for Poland, etc.
    * @type {string}
    */
@@ -134,26 +134,19 @@ type DayName = (typeof DAY_NAMES)[number];
 function isWorkingDay(dayIndex: number, options: Options): boolean {
   const dayName = DAY_NAMES[dayIndex] as DayName;
 
-  if (options[`without${String(dayName)}s` as keyof Options]) return false;
-  if (options[`with${String(dayName)}s` as keyof Options]) return true;
+  if (options[`without${dayName}s` as keyof Options]) return false;
+  if (options[`with${dayName}s` as keyof Options]) return true;
 
+  // Default to Monday-Friday as working days
   return dayIndex >= 1 && dayIndex <= 5;
 }
 
-/**
- * Calculates the total number of working hours in the current month based on the given options.
- * @param options Configuration options
- * @returns Total working hours
- */
-function calculateWorkingHours(options: Options): number {
-  const today = new Date();
-  const { country, hoursPerDay = 8, month = today.getMonth() + 1, year = today.getFullYear() } = options;
+function getHolidaysForMonth(year: number, month: number, country: string): Set<string> {
   const hd = new Holidays(country);
-
   const startOfMonth = new Date(year, month - 1, 1);
   const endOfMonth = new Date(year, month, 0);
 
-  const holidays = new Set(
+  return new Set(
     hd
       .getHolidays(year)
       .filter(({ date, type }) => {
@@ -162,6 +155,19 @@ function calculateWorkingHours(options: Options): number {
       })
       .map(({ date }) => new Date(date).toDateString())
   );
+}
+
+/**
+ * Calculates the total number of working hours in a given month.
+ * @param options Configuration options
+ * @returns Total working hours
+ */
+function calculateWorkingHours(options: Options): number {
+  const today = new Date();
+  const { country, hoursPerDay = 8, month = today.getMonth() + 1, year = today.getFullYear() } = options;
+
+  const holidays = getHolidaysForMonth(year, month, country);
+  const endOfMonth = new Date(year, month, 0);
 
   let workingHours = 0;
 

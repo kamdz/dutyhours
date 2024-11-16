@@ -1,56 +1,46 @@
-import calculateWorkingHours from '@@';
-import Holidays from 'date-holidays';
+import calculateWorkingHours, { Options } from '@@';
+
+jest.mock('date-holidays', () =>
+  jest.fn((country: string) => ({
+    getHolidays: (year: number) => {
+      if (country === 'US' && year === 2024) {
+        return [{ date: '2024-11-28', type: 'public' }]; // Thanksgiving
+      }
+      return [];
+    }
+  }))
+);
 
 describe('calculateWorkingHours', () => {
-  let holidaysInDecember;
+  it('calculates working hours for default settings', () => {
+    const options: Options = { country: 'US', month: 11, year: 2024 };
+    const result = calculateWorkingHours(options);
 
-  beforeAll(() => {
-    holidaysInDecember = new Holidays('PL').getHolidays(2024).filter(holiday => holiday.date.startsWith('2024-12'));
+    // November 2024: 21 weekdays - 1 holiday (Thanksgiving) = 20 working days
+    expect(result).toBe(20 * 8);
   });
 
-  it('should correctly calculate working hours with default options in December for PL', () => {
-    const expectedWorkingHours = (22 - holidaysInDecember.length) * 8;
+  it('calculates working hours with custom hours per day', () => {
+    const options: Options = { country: 'US', month: 11, year: 2024, hoursPerDay: 6 };
+    const result = calculateWorkingHours(options);
 
-    expect(
-      calculateWorkingHours({
-        country: 'PL',
-        month: 12
-      })
-    ).toBe(expectedWorkingHours);
-  });
-  it('should correctly calculate working hours based on hoursPerDay', () => {
-    const expectedWorkingHours = (22 - holidaysInDecember.length) * 6;
-
-    expect(
-      calculateWorkingHours({
-        country: 'PL',
-        month: 12,
-        hoursPerDay: 6
-      })
-    ).toBe(expectedWorkingHours);
-  });
-  it('should correctly calculate working hours when weekends are included', () => {
-    const expectedWorkingHours = (31 - holidaysInDecember.length) * 8;
-
-    expect(
-      calculateWorkingHours({
-        country: 'PL',
-        month: 12,
-        withSaturdays: true,
-        withSundays: true
-      })
-    ).toBe(expectedWorkingHours);
+    // November 2024: 20 working days * 6 hours
+    expect(result).toBe(20 * 6);
   });
 
-  it('should correctly calculate working hours when Fridays are free', () => {
-    const expectedWorkingHours = (22 - holidaysInDecember.length - 4) * 8;
+  it('includes weekends as working days', () => {
+    const options: Options = { country: 'US', month: 11, year: 2024, withSaturdays: true, withSundays: true };
+    const result = calculateWorkingHours(options);
 
-    expect(
-      calculateWorkingHours({
-        country: 'PL',
-        month: 12,
-        withoutFridays: true
-      })
-    ).toBe(expectedWorkingHours);
+    // November 2024: 30 days - 1 holiday = 29 working days
+    expect(result).toBe(29 * 8);
+  });
+
+  it('excludes specific weekdays', () => {
+    const options: Options = { country: 'US', month: 11, year: 2024, withoutFridays: true };
+    const result = calculateWorkingHours(options);
+
+    // November 2024: 16 weekdays (excluding Fridays) - 1 holiday
+    expect(result).toBe(15 * 8);
   });
 });
