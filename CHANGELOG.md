@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/kamdz/dutyhours/compare/v1.0.1...v1.0.2) (2024-11-16)
+
+
+### Bug Fixes
+
+* move commander to deps ([7b91d0a](https://github.com/kamdz/dutyhours/commit/7b91d0a90641e0ba0c3ef9a7b072ef7b2d4edf2c))
+
 ## [1.0.1](https://github.com/kamdz/dutyhours/compare/v1.0.0...v1.0.1) (2024-11-16)
 
 
