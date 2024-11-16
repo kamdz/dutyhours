@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A tool to calculate total working hours in a given month, taking into account public holidays and configurable working days.",
   "keywords": [
-    "dutyhours"
+    "working-hours"
   ],
   "bugs": {
     "url": "https://github.com/kamdz/dutyhours/issues"
