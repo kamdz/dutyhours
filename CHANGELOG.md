@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/kamdz/dutyhours/compare/v1.0.2...v1.0.3) (2024-11-27)
+
+
+### Bug Fixes
+
+* **deps:** bump date-holidays from 3.23.12 to 3.23.13 ([7185ab0](https://github.com/kamdz/dutyhours/commit/7185ab056c5970ae60e9ed38a3d26ff49250bdb3))
+
 ## [1.0.2](https://github.com/kamdz/dutyhours/compare/v1.0.1...v1.0.2) (2024-11-16)
 
 
