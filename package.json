@@ -129,6 +129,6 @@
   "packageManager": "yarn@4.5.1",
   "dependencies": {
     "commander": "^12.1.0",
-    "date-holidays": "^3.23.13"
+    "date-holidays": "^3.23.14"
   }
 }
