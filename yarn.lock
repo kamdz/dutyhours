@@ -3502,10 +3502,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^12.1.0, commander@npm:~12.1.0":
-  version: 12.1.0
-  resolution: "commander@npm:12.1.0"
-  checksum: 10c0/6e1996680c083b3b897bfc1cfe1c58dfbcd9842fd43e1aaf8a795fbc237f65efcc860a3ef457b318e73f29a4f4a28f6403c3d653d021d960e4632dd45bde54a9
+"commander@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "commander@npm:13.0.0"
+  checksum: 10c0/8ba1e2b83bfdbcefd967aa505f5f5dc58202aa5f8e10437f61f6980dd8a69f868dba439a261f9fb72fc543c5f6fe58140e37b001a4c70b92ae22527abe94dfe1
   languageName: node
   linkType: hard
 
@@ -3513,6 +3513,13 @@ __metadata:
   version: 4.1.1
   resolution: "commander@npm:4.1.1"
   checksum: 10c0/84a76c08fe6cc08c9c93f62ac573d2907d8e79138999312c92d4155bc2325d487d64d13f669b2000c9f8caf70493c1be2dac74fec3c51d5a04f8bc3ae1830bab
+  languageName: node
+  linkType: hard
+
+"commander@npm:~12.1.0":
+  version: 12.1.0
+  resolution: "commander@npm:12.1.0"
+  checksum: 10c0/6e1996680c083b3b897bfc1cfe1c58dfbcd9842fd43e1aaf8a795fbc237f65efcc860a3ef457b318e73f29a4f4a28f6403c3d653d021d960e4632dd45bde54a9
   languageName: node
   linkType: hard
 
@@ -3835,40 +3842,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-easter@npm:^1.0.2":
+"date-easter@npm:^1.0.3":
   version: 1.0.3
   resolution: "date-easter@npm:1.0.3"
   checksum: 10c0/08734502a3264fb8c5073c22ab13e6624e7981293c72b5e3c37ea88bceae75db9ec8cd25443ea3729b096f5e062469d934f9ebf072a30229b313d1ba28e5d204
   languageName: node
   linkType: hard
 
-"date-holidays-parser@npm:^3.4.4":
-  version: 3.4.4
-  resolution: "date-holidays-parser@npm:3.4.4"
+"date-holidays-parser@npm:^3.4.6":
+  version: 3.4.6
+  resolution: "date-holidays-parser@npm:3.4.6"
   dependencies:
     astronomia: "npm:^4.1.1"
     caldate: "npm:^2.0.5"
     date-bengali-revised: "npm:^2.0.2"
     date-chinese: "npm:^2.1.4"
-    date-easter: "npm:^1.0.2"
+    date-easter: "npm:^1.0.3"
     deepmerge: "npm:^4.3.1"
-    jalaali-js: "npm:^1.2.6"
-    moment-timezone: "npm:^0.5.43"
-  checksum: 10c0/0e39cfd00d7873e677f01834bb27802f444ef7c2b4ea8335dd90f2f95b9f8433dd3f26a8b32590052a7222ee56d104769f60dd4f940cb9e6669c0707beb88698
+    jalaali-js: "npm:^1.2.7"
+    moment-timezone: "npm:^0.5.46"
+  checksum: 10c0/b85052416d7c707306d9ce4761fbcc0776a668dc1a1a08380d6567d44d0ac03bf2c54921b8891f76aa97decdb7fa150a7ea977cda7573a52a0722b95aef37e70
   languageName: node
   linkType: hard
 
-"date-holidays@npm:^3.23.13":
-  version: 3.23.13
-  resolution: "date-holidays@npm:3.23.13"
+"date-holidays@npm:^3.23.17":
+  version: 3.23.17
+  resolution: "date-holidays@npm:3.23.17"
   dependencies:
-    date-holidays-parser: "npm:^3.4.4"
+    date-holidays-parser: "npm:^3.4.6"
     js-yaml: "npm:^4.1.0"
     lodash: "npm:^4.17.21"
     prepin: "npm:^1.0.3"
   bin:
     holidays2json: scripts/holidays2json.cjs
-  checksum: 10c0/734f27ca3767d823d2944c6e5f1c9be41fe19f3442bfb06d94db8e07779da5d8bb572bcc6eb906076fd1e24fb1676d108592eb71c0f7df8fb4cedef80a513546
+  checksum: 10c0/b9d45d1642c79f169fe0abe31599ff7b9d7728bfb2bf12c0f979892474ebb00bfdb2b06aa002f484fb5df4061cde76f0b3b9523f73e63f817cd6a1bb76e43224
   languageName: node
   linkType: hard
 
@@ -4049,10 +4056,10 @@ __metadata:
     "@types/fs-extra": "npm:^11.0.4"
     "@types/jest": "npm:^29.5.14"
     "@types/node": "npm:^22.10.1"
-    commander: "npm:^12.1.0"
+    commander: "npm:^13.0.0"
     commitizen: "npm:^4.3.1"
     cz-conventional-changelog: "npm:^3.3.0"
-    date-holidays: "npm:^3.23.13"
+    date-holidays: "npm:^3.23.17"
     eslint: "npm:^9.16.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-import: "npm:^2.31.0"
@@ -6285,7 +6292,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jalaali-js@npm:^1.2.6":
+"jalaali-js@npm:^1.2.7":
   version: 1.2.7
   resolution: "jalaali-js@npm:1.2.7"
   checksum: 10c0/f745c43fdc728ea1349c37821c1768676e5880a671ae29f235fe0efd9630d7afc22ed43373eec8932d9272a8bceb85dc278657483aa31ffca9a85c1188c79d64
@@ -7685,7 +7692,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment-timezone@npm:^0.5.43":
+"moment-timezone@npm:^0.5.43, moment-timezone@npm:^0.5.46":
   version: 0.5.46
   resolution: "moment-timezone@npm:0.5.46"
   dependencies:
