@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/kamdz/dutyhours/compare/v1.0.4...v1.0.5) (2025-01-27)
+
+
+### Bug Fixes
+
+* exports ([355f950](https://github.com/kamdz/dutyhours/commit/355f95000ec54f9c9d6844d0aab4b059c1989e71))
+
 ## [1.0.4](https://github.com/kamdz/dutyhours/compare/v1.0.3...v1.0.4) (2025-01-27)
 
 
