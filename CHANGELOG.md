@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/kamdz/dutyhours/compare/v1.0.3...v1.0.4) (2025-01-27)
+
+
+### Bug Fixes
+
+* **deps:** bump the dependencies group across 1 directory with 2 updates ([fd55728](https://github.com/kamdz/dutyhours/commit/fd557284ca8869ee544f4ceab97a2ee20ab5974a))
+
 ## [1.0.3](https://github.com/kamdz/dutyhours/compare/v1.0.2...v1.0.3) (2024-11-27)
 
 

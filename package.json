@@ -1,6 +1,6 @@
 {
   "name": "dutyhours",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A tool to calculate total working hours in a given month, taking into account public holidays and configurable working days.",
   "keywords": [
     "working-hours"
